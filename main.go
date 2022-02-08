@@ -14,6 +14,7 @@ func main() {
 
 	// var bookings = [50]string{}
 	var bookings [50]string
+	
 
 	var fristName string
 	var lastName string
