@@ -43,6 +43,14 @@ func main() {
 		// userTickets = 2
 		// fmt.Printf("User %v booked %v tickets.\n", fristName, userTickets)
 
+		isValidName := len(fristName) >= 2 && len(lastName) >=2
+
+		isValidEmail := strings.Contains(email, "@")
+
+		isValidTicketNumber := userTickets > 0 && userTickets <= remainingTickets
+
+		
+		
 		if userTickets > remainingTickets {
 			fmt.Printf("We only have %v tickets remaining, so you can't book %v tickets\n", remainingTickets, userTickets)
 			continue
@@ -69,9 +77,12 @@ func main() {
 
 		fmt.Printf("The first names of boolings are: %v\n", firstNames)
 
-		
+		if  !isValidName && !isValidEmail && !isValidTicketNumber{
+			fmt.Println("Your input data is invalid, try again")
+			break
+		}
 
-		if  remainingTickets == 0{
+		if remainingTickets == 0{
 			fmt.Println("Our conference is booked out, Come back next year.")
 			break
 		}
